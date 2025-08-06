@@ -75,9 +75,9 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/contact">
-                  <a className="text-gray-400 hover:text-green-500 transition-colors" data-testid="footer-contact">
+                  <span className="text-gray-400 hover:text-green-500 transition-colors cursor-pointer" data-testid="footer-contact">
                     Contacto
-                  </a>
+                  </span>
                 </Link>
               </li>
             </ul>
@@ -114,14 +114,14 @@ export default function Footer() {
           </p>
           <div className="flex space-x-6">
             <Link href="/privacy">
-              <a className="text-gray-400 hover:text-green-500 transition-colors" data-testid="footer-privacy">
+              <span className="text-gray-400 hover:text-green-500 transition-colors cursor-pointer" data-testid="footer-privacy">
                 Política de Privacidade
-              </a>
+              </span>
             </Link>
             <Link href="/terms">
-              <a className="text-gray-400 hover:text-green-500 transition-colors" data-testid="footer-terms">
+              <span className="text-gray-400 hover:text-green-500 transition-colors cursor-pointer" data-testid="footer-terms">
                 Termos de Uso
-              </a>
+              </span>
             </Link>
           </div>
         </div>

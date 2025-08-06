@@ -123,9 +123,9 @@ export default function HomePage() {
               ))}
             </div>
           ) : featuredProperties && featuredProperties.length > 0 ? (
-            <div className="asymmetric-grid scroll-reveal" data-testid="featured-properties">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 scroll-reveal" data-testid="featured-properties">
               {featuredProperties.map((property, index) => (
-                <div key={property.id} className={`${index === 0 ? 'featured-large' : index === 1 ? 'featured-wide' : index === 3 ? 'featured-tall' : ''}`}>
+                <div key={property.id} className={`${index === 0 ? 'sm:col-span-2 lg:col-span-2 lg:row-span-2' : ''} card-mobile`}>
                   <PropertyCard property={property} />
                 </div>
               ))}
