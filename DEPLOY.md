@@ -1,18 +1,24 @@
-# 🚀 Guia de Deploy para Netlify
+# 🚀 Guia de Deploy para Netlify - CORRIGIDO
 
-## ✅ Preparação Concluída
+## ✅ Problemas 404 Resolvidos
 
-O projeto **Palanca Real** está totalmente preparado para deploy estático no Netlify com as seguintes configurações:
+O erro 404 no Netlify foi corrigido! As seguintes correções foram implementadas:
 
-### Arquivos de Configuração Criados:
-- ✅ `netlify.toml` - Configuração principal do Netlify
-- ✅ `_redirects` - Redirecionamentos para SPA
-- ✅ `README.md` - Documentação completa
-- ✅ Sistema de dados mock para modo estático
+### Correções Aplicadas:
+- ✅ `netlify.toml` corrigido para apontar para `dist/public`
+- ✅ `build-netlify.sh` criado para build automatizado
+- ✅ `_redirects` copiado para diretório correto
+- ✅ SPA routing configurado corretamente
 
-### Build Realizado:
-- ✅ Build de produção executado com sucesso
-- ✅ Arquivos otimizados na pasta `dist/public/`
+### Arquivos de Configuração:
+- ✅ `netlify.toml` - Configuração corrigida
+- ✅ `_redirects` - Redirecionamentos SPA
+- ✅ `build-netlify.sh` - Script de build personalizado
+- ✅ Sistema de dados mock integrado
+
+### Build Verificado:
+- ✅ Build executado e testado com sucesso
+- ✅ Arquivos na pasta correta: `dist/public/`
 - ✅ CSS: 91.26 kB (gzipped: 15.42 kB)
 - ✅ JS: 512.10 kB (gzipped: 152.10 kB)
 
@@ -26,11 +32,13 @@ O projeto **Palanca Real** está totalmente preparado para deploy estático no N
    - Conecte seu GitHub/GitLab/Bitbucket
    - Selecione o repositório
 
-2. **Configurações de Build**
+2. **Configurações de Build** (IMPORTANTES - Use estas configurações exatas)
    ```
-   Build command: npm run build
+   Build command: bash build-netlify.sh
    Publish directory: dist/public
    Node version: 20
+   Environment variables: (opcional)
+     VITE_STATIC_MODE=true
    ```
 
 3. **Deploy Automático**
@@ -51,11 +59,11 @@ O projeto **Palanca Real** está totalmente preparado para deploy estático no N
 
 ## ⚙️ Configurações Incluídas
 
-### netlify.toml
+### netlify.toml (CORRIGIDO)
 ```toml
 [build]
   publish = "dist/public"
-  command = "npm run build"
+  command = "bash build-netlify.sh"
   
 [build.environment]
   NODE_VERSION = "20"
@@ -116,19 +124,33 @@ Após o deploy, o site estará disponível em:
 - `https://seu-site-nome.netlify.app`
 - Domínio personalizado (se configurado)
 
-## 🔧 Troubleshooting
+## 🔧 Troubleshooting - Erro 404 Resolvido
 
-### Build Falha?
+### ❌ Se ainda receber 404:
+
+1. **Verificar Configurações de Build:**
+   ```
+   Build command: bash build-netlify.sh
+   Publish directory: dist/public
+   ```
+
+2. **Verificar Arquivos no Deploy:**
+   - index.html deve estar em dist/public/
+   - _redirects deve estar em dist/public/
+   - assets/ deve estar em dist/public/assets/
+
+3. **Deploy Manual (se Git falhar):**
+   - Execute: `bash build-netlify.sh`
+   - Faça upload apenas da pasta `dist/public/`
+
+### ✅ Build Falha?
 - Verifique se Node.js 20 está configurado
 - Confirme se `npm install` roda sem erros
+- Execute `bash build-netlify.sh` localmente primeiro
 
-### Página 404?
-- Verifique se `_redirects` está na pasta raiz
-- Confirme redirecionamento SPA no netlify.toml
-
-### Assets Não Carregam?
-- Verifique se a pasta `dist/public` está sendo publicada
-- Confirme se paths das imagens estão corretos
+### ✅ Assets Não Carregam?
+- Todos os assets estão em `/assets/` (paths corretos)
+- Cache configurado automaticamente
 
 ## ✨ Resultado Final
 
