@@ -1,76 +1,84 @@
-# Overview
+# Palanca Real - Portal Imobiliário de Angola
 
-This is a full-stack real estate web application called "Palanca Real" built for the Angolan market. The application allows users to browse properties, search with filters, view property details, and contact agents. It features a modern responsive design with Portuguese language support and focuses on providing a comprehensive property listing platform for Angola's major cities.
+## Overview
+Uma plataforma imobiliária moderna e responsiva para Angola que oferece experiências otimizadas para smartphones, tablets e dispositivos com telas pequenas. O aplicativo utiliza React.js, Tailwind CSS, e componentes shadcn/ui para criar uma interface fluida e acessível em todos os dispositivos.
+
+## Recent Changes
+
+### Otimizações de Responsividade Móvel (Janeiro 2025)
+- **Meta tags otimizadas**: Adicionadas configurações específicas para dispositivos móveis, incluindo viewport responsivo, tema colors, e otimizações para PWA
+- **Header responsivo**: Melhorada a navegação com breakpoints otimizados (lg:hidden ao invés de md:hidden), logo responsivo, e menu mobile aprimorado
+- **Seção Hero otimizada**: Hero section com altura adaptativa (min-h-[90vh] sm:min-h-screen), tipografia responsiva com clamp(), e elementos glassmorphism condicionais para mobile
+- **Estatísticas responsivas**: Grid system melhorado (grid-cols-2 md:grid-cols-4), padding e spacing fluidos
+- **Componentes otimizados**: PropertySearch com grid responsivo (sm:grid-cols-2 lg:grid-cols-4), PropertyCard com alturas adaptativas, Footer com layout flexível
+- **CSS personalizado**: Adicionadas classes utilitárias para touch targets, botões responsivos, containers móveis, grids responsivos, tipografia otimizada, e safe area padding para iOS
+
+## Project Architecture
+
+### Frontend Structure
+```
+client/src/
+├── components/
+│   ├── layout/
+│   │   ├── header.tsx        # Header responsivo com menu mobile
+│   │   └── footer.tsx        # Footer com layout flexível
+│   ├── property/
+│   │   ├── property-search.tsx  # Busca responsiva
+│   │   └── property-card.tsx    # Cards otimizados para mobile
+│   └── ui/                   # Componentes shadcn/ui
+├── pages/
+│   └── home.tsx             # Página principal otimizada
+├── hooks/
+└── lib/
+```
+
+### Tecnologias Utilizadas
+- **Frontend**: React.js com TypeScript
+- **Styling**: Tailwind CSS com configuração responsiva personalizada
+- **Components**: shadcn/ui (Button, Card, Sheet, Select, etc.)
+- **Icons**: Lucide React
+- **Routing**: Wouter
+- **State Management**: React Query (TanStack Query)
+
+### Responsive Design Features
+1. **Mobile-First Approach**: Design pensado primeiro para dispositivos móveis
+2. **Touch Optimizations**: Alvos de toque com mínimo 44px, botões maiores em mobile
+3. **Fluid Typography**: Sistema de tipografia usando clamp() para escalar automaticamente
+4. **Adaptive Layouts**: Grids e layouts que se adaptam de 1 coluna (mobile) até 4 colunas (desktop)
+5. **Performance**: Imagens responsivas, lazy loading, e otimizações de renderização
+6. **Accessibility**: Estados de foco melhorados, contraste adequado, navegação por teclado
+
+### CSS Classes Personalizadas
+- `.touch-target`: Garante alvos de toque adequados (44px mínimo)
+- `.btn-responsive`: Botões que se adaptam ao tamanho da tela
+- `.mobile-container`: Containers com padding fluido
+- `.responsive-grid`: Sistema de grid adaptativo
+- `.hero-mobile`, `.hero-content-mobile`: Otimizações específicas para hero section
+- `.img-responsive`: Imagens que se adaptam responsivamente
+- `.safe-area-padding`: Suporte a safe areas em iOS
+
+### Breakpoints
+- **xs**: < 480px (smartphones pequenos)
+- **sm**: 640px+ (smartphones grandes)
+- **md**: 768px+ (tablets portrait)
+- **lg**: 1024px+ (tablets landscape / desktop pequeno)
+- **xl**: 1280px+ (desktop)
 
 ## User Preferences
+- Usuário solicitou otimização específica para smartphones, tablets e dispositivos com telas pequenas
+- Preferência por interfaces fluidas e acessíveis em todos os dispositivos
+- Foco na usabilidade mobile sem comprometer a experiência desktop
 
-Preferred communication style: Simple, everyday language.
+## Development Notes
+- Todos os componentes foram revisados para garantir responsividade
+- Implementadas otimizações específicas para touch devices
+- Corrigidos problemas de DOM nesting (nested anchor tags) no header e footer
+- Adicionadas classes CSS personalizadas para casos de uso específicos
+- Layout hero otimizado para diferentes tamanhos de tela
+- Sistema de grid responsivo implementado em toda a aplicação
 
-## System Architecture
-
-### Frontend Architecture
-- **React + TypeScript**: Modern component-based UI using functional components with hooks
-- **Wouter**: Lightweight client-side routing instead of React Router
-- **TanStack Query**: Server state management for API calls, caching, and data synchronization
-- **Tailwind CSS + shadcn/ui**: Utility-first styling with pre-built component library
-- **Vite**: Fast build tool and development server with HMR support
-
-### Backend Architecture
-- **Express.js**: Node.js web framework handling REST API endpoints
-- **In-Memory Storage**: Current implementation uses Map-based storage with sample data
-- **TypeScript**: Full type safety across the entire application stack
-- **Shared Schema**: Common type definitions between frontend and backend via shared directory
-
-### Database Layer
-- **Drizzle ORM**: Type-safe database toolkit configured for PostgreSQL
-- **Schema Definition**: Centralized database schema in shared/schema.ts covering properties, agents, and contacts
-- **Migration Support**: Database migration system using Drizzle Kit
-
-### API Design
-- **RESTful Endpoints**: Standard HTTP methods for property and agent operations
-- **Filtering Support**: Query parameter-based filtering for properties (city, type, price, bedrooms)
-- **Form Handling**: Contact form submission with validation
-- **Error Handling**: Centralized error middleware with proper status codes
-
-### UI/UX Architecture
-- **Component Structure**: Organized into layout, property, agent, and contact modules
-- **Responsive Design**: Mobile-first approach with breakpoint-based layouts
-- **Form Management**: React Hook Form with Zod validation
-- **Toast Notifications**: User feedback system for actions and errors
-- **Accessibility**: Proper ARIA attributes and semantic HTML
-
-### Development Architecture
-- **Monorepo Structure**: Client and server code in same repository with shared types
-- **Hot Reload**: Development setup with automatic reloading for both frontend and backend
-- **Type Safety**: End-to-end TypeScript with strict configuration
-- **Path Aliases**: Simplified imports using @ prefixes for better developer experience
-
-## External Dependencies
-
-### Core Framework Dependencies
-- **@neondatabase/serverless**: PostgreSQL database driver optimized for serverless environments
-- **@tanstack/react-query**: Powerful data synchronization for React applications
-- **@radix-ui/react-***: Comprehensive accessible UI primitives for complex components
-- **drizzle-orm & drizzle-kit**: Type-safe ORM and database toolkit
-
-### UI and Styling
-- **tailwindcss**: Utility-first CSS framework for rapid UI development
-- **class-variance-authority**: Utility for managing component variants
-- **cmdk**: Command palette component for enhanced user interaction
-- **embla-carousel-react**: Touch-friendly carousel component
-
-### Form and Validation
-- **react-hook-form**: Performant forms with easy validation
-- **@hookform/resolvers**: Integration layer for external validation libraries
-- **zod**: TypeScript-first schema validation
-
-### Development Tools
-- **vite**: Fast build tool with optimized development experience
-- **tsx**: TypeScript execution engine for Node.js
-- **esbuild**: Fast JavaScript bundler for production builds
-
-### Database and Session Management
-- **connect-pg-simple**: PostgreSQL session store for Express sessions
-- **date-fns**: Comprehensive date utility library
-
-The application is structured as a monorepo with clear separation between client, server, and shared code. The architecture supports both development and production deployments with proper build optimization and error handling throughout the stack.
+## Next Steps
+- Testes de usabilidade em diferentes dispositivos
+- Otimizações de performance para mobile
+- Implementação de PWA features
+- Melhorias de acessibilidade (ARIA labels, navegação por teclado)

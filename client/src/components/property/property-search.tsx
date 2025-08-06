@@ -34,9 +34,9 @@ export default function PropertySearch() {
   };
 
   return (
-    <Card className="max-w-5xl mx-auto">
-      <CardContent className="p-6 md:p-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+    <Card className="max-w-5xl mx-auto glass-strong">
+      <CardContent className="p-4 sm:p-6 md:p-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           <div className="relative">
             <label className="block text-sm font-medium text-gray-700 mb-2">Localização</label>
             <Select 
@@ -94,10 +94,10 @@ export default function PropertySearch() {
             </Select>
           </div>
 
-          <div className="flex items-end">
+          <div className="flex items-end sm:col-span-2 lg:col-span-1">
             <Button 
               onClick={handleSearch} 
-              className="w-full bg-green-500 text-white hover:bg-green-600"
+              className="w-full bg-green-500 text-white hover:bg-green-600 btn-responsive touch-target focus-visible-enhanced"
               data-testid="button-search"
             >
               <Search className="h-4 w-4 mr-2" />

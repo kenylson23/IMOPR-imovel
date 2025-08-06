@@ -3,11 +3,11 @@ import { Link } from "wouter";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-16">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-gray-900 text-white py-12 md:py-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="md:col-span-2">
+          <div className="sm:col-span-2 lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
                 <Home className="text-white text-xl" />
@@ -18,17 +18,17 @@ export default function Footer() {
               O portal imobiliário líder em Angola, conectando pessoas aos seus lares dos sonhos há mais de 5 anos. 
               Confiança, experiência e excelência em cada transação.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="bg-green-500 p-3 rounded-lg hover:bg-green-600 transition-colors" data-testid="social-facebook">
+            <div className="flex flex-wrap gap-3 sm:gap-4">
+              <a href="#" className="bg-green-500 p-2 sm:p-3 rounded-lg hover:bg-green-600 transition-colors touch-target" data-testid="social-facebook">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-green-500 p-3 rounded-lg hover:bg-green-600 transition-colors" data-testid="social-instagram">
+              <a href="#" className="bg-green-500 p-2 sm:p-3 rounded-lg hover:bg-green-600 transition-colors touch-target" data-testid="social-instagram">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-green-500 p-3 rounded-lg hover:bg-green-600 transition-colors" data-testid="social-linkedin">
+              <a href="#" className="bg-green-500 p-2 sm:p-3 rounded-lg hover:bg-green-600 transition-colors touch-target" data-testid="social-linkedin">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-green-500 p-3 rounded-lg hover:bg-green-600 transition-colors" data-testid="social-whatsapp">
+              <a href="#" className="bg-green-500 p-2 sm:p-3 rounded-lg hover:bg-green-600 transition-colors touch-target" data-testid="social-whatsapp">
                 <MessageCircle className="w-5 h-5" />
               </a>
             </div>
@@ -40,37 +40,37 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link href="/about">
-                  <a className="text-gray-400 hover:text-green-500 transition-colors" data-testid="footer-about">
+                  <span className="text-gray-400 hover:text-green-500 transition-colors cursor-pointer" data-testid="footer-about">
                     Sobre Nós
-                  </a>
+                  </span>
                 </Link>
               </li>
               <li>
                 <Link href="/how-it-works">
-                  <a className="text-gray-400 hover:text-green-500 transition-colors" data-testid="footer-how-it-works">
+                  <span className="text-gray-400 hover:text-green-500 transition-colors cursor-pointer" data-testid="footer-how-it-works">
                     Como Funciona
-                  </a>
+                  </span>
                 </Link>
               </li>
               <li>
                 <Link href="/list-property">
-                  <a className="text-gray-400 hover:text-green-500 transition-colors" data-testid="footer-list-property">
+                  <span className="text-gray-400 hover:text-green-500 transition-colors cursor-pointer" data-testid="footer-list-property">
                     Anunciar Imóvel
-                  </a>
+                  </span>
                 </Link>
               </li>
               <li>
                 <Link href="/agents">
-                  <a className="text-gray-400 hover:text-green-500 transition-colors" data-testid="footer-agents">
+                  <span className="text-gray-400 hover:text-green-500 transition-colors cursor-pointer" data-testid="footer-agents">
                     Nossos Agentes
-                  </a>
+                  </span>
                 </Link>
               </li>
               <li>
                 <Link href="/blog">
-                  <a className="text-gray-400 hover:text-green-500 transition-colors" data-testid="footer-blog">
+                  <span className="text-gray-400 hover:text-green-500 transition-colors cursor-pointer" data-testid="footer-blog">
                     Blog
-                  </a>
+                  </span>
                 </Link>
               </li>
               <li>

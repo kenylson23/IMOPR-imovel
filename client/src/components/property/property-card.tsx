@@ -55,11 +55,11 @@ export default function PropertyCard({ property }: PropertyCardProps) {
   return (
     <Card className={`group ${property.featured ? 'glass-strong premium-hover gradient-border' : 'glass hover-lift'} transition-all duration-500 overflow-hidden border-0 rounded-3xl`} data-testid={`property-card-${property.id}`}>
       <div className="relative overflow-hidden">
-        <div className="relative h-64 overflow-hidden">
+        <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
           <img
             src={images[currentImageIndex]}
             alt={property.title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 img-responsive"
           />
           
           {/* Gradient overlay for better text visibility */}

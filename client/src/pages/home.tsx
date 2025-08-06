@@ -30,7 +30,7 @@ export default function HomePage() {
       <Header />
       
       {/* Hero Section - Modern Layout */}
-      <section className="relative min-h-screen flex items-center bg-gradient-to-br from-green-900 via-green-700 to-emerald-600 text-white overflow-hidden">
+      <section className="relative min-h-[90vh] sm:min-h-screen flex items-center bg-gradient-to-br from-green-900 via-green-700 to-emerald-600 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/30"></div>
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40" 
@@ -39,30 +39,30 @@ export default function HomePage() {
           }}
         />
         
-        {/* Floating glassmorphism elements */}
-        <div className="absolute top-20 right-20 w-32 h-32 glass morphing-blob opacity-20"></div>
-        <div className="absolute bottom-32 left-16 w-24 h-24 glass-strong morphing-blob opacity-15"></div>
-        <div className="absolute top-1/2 left-20 w-16 h-16 glass-dark morphing-blob opacity-25"></div>
+        {/* Floating glassmorphism elements - Responsive */}
+        <div className="hidden md:block absolute top-20 right-20 w-32 h-32 glass morphing-blob opacity-20"></div>
+        <div className="hidden sm:block absolute bottom-32 left-4 md:left-16 w-16 md:w-24 h-16 md:h-24 glass-strong morphing-blob opacity-15"></div>
+        <div className="hidden md:block absolute top-1/2 left-20 w-16 h-16 glass-dark morphing-blob opacity-25"></div>
         
-        <div className="relative container-fluid py-20">
-          <div className="max-w-6xl mx-auto text-center scroll-reveal">
-            <h1 className="typography-hero mb-8 bg-gradient-to-r from-white via-green-100 to-emerald-200 bg-clip-text text-transparent" data-testid="hero-title">
-              Encontre o Seu <br />
-              <span className="text-green-300">Lar Ideal</span> <br />
+        <div className="relative container-fluid py-12 md:py-20">
+          <div className="max-w-6xl mx-auto text-center scroll-reveal px-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 md:mb-8 bg-gradient-to-r from-white via-green-100 to-emerald-200 bg-clip-text text-transparent leading-tight" data-testid="hero-title">
+              Encontre o Seu <br className="hidden sm:block" />
+              <span className="text-green-300">Lar Ideal</span> <br className="hidden sm:block" />
               em Angola
             </h1>
-            <p className="typography-body-large text-gray-200 mb-12 max-w-3xl mx-auto" data-testid="hero-subtitle">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 md:mb-12 max-w-3xl mx-auto px-2" data-testid="hero-subtitle">
               Descubra as melhores oportunidades imobiliárias em Luanda, Benguela, Huambo e muito mais
             </p>
             
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-4xl mx-auto px-4">
               <PropertySearch />
             </div>
           </div>
         </div>
 
-        {/* Modern scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/70">
+        {/* Modern scroll indicator - Hidden on mobile */}
+        <div className="hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/70">
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center glass-dark backdrop-blur-sm">
             <div className="w-1 h-3 bg-gradient-to-b from-green-400 to-white rounded-full mt-2 animate-pulse"></div>
           </div>
@@ -70,54 +70,54 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section - Modern Glassmorphism */}
-      <section className="relative py-20 bg-gradient-to-r from-slate-50 to-gray-100 overflow-hidden">
+      <section className="relative py-12 md:py-20 bg-gradient-to-r from-slate-50 to-gray-100 overflow-hidden">
         {/* Background elements */}
-        <div className="absolute top-10 left-10 w-40 h-40 bg-green-200/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 right-10 w-32 h-32 bg-blue-200/20 rounded-full blur-2xl"></div>
+        <div className="hidden md:block absolute top-10 left-10 w-40 h-40 bg-green-200/20 rounded-full blur-3xl"></div>
+        <div className="hidden md:block absolute bottom-10 right-10 w-32 h-32 bg-blue-200/20 rounded-full blur-2xl"></div>
         
-        <div className="container-fluid relative">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-fluid-sm text-center">
-            <div className="glass-strong rounded-2xl p-fluid-sm hover-lift group" data-testid="stat-properties">
-              <div className="typography-display text-green-600 group-hover:text-green-700 transition-colors">2,500+</div>
-              <div className="typography-body text-gray-600 mt-2">Imóveis Disponíveis</div>
+        <div className="container-fluid relative px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center">
+            <div className="glass-strong rounded-xl md:rounded-2xl p-4 md:p-6 hover-lift group" data-testid="stat-properties">
+              <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-green-600 group-hover:text-green-700 transition-colors">2,500+</div>
+              <div className="text-sm md:text-base text-gray-600 mt-1 md:mt-2">Imóveis Disponíveis</div>
             </div>
-            <div className="glass-strong rounded-2xl p-fluid-sm hover-lift group" data-testid="stat-agents">
-              <div className="typography-display text-green-600 group-hover:text-green-700 transition-colors">150+</div>
-              <div className="typography-body text-gray-600 mt-2">Agentes Certificados</div>
+            <div className="glass-strong rounded-xl md:rounded-2xl p-4 md:p-6 hover-lift group" data-testid="stat-agents">
+              <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-green-600 group-hover:text-green-700 transition-colors">150+</div>
+              <div className="text-sm md:text-base text-gray-600 mt-1 md:mt-2">Agentes Certificados</div>
             </div>
-            <div className="glass-strong rounded-2xl p-fluid-sm hover-lift group" data-testid="stat-satisfaction">
-              <div className="typography-display text-green-600 group-hover:text-green-700 transition-colors">98%</div>
-              <div className="typography-body text-gray-600 mt-2">Clientes Satisfeitos</div>
+            <div className="glass-strong rounded-xl md:rounded-2xl p-4 md:p-6 hover-lift group" data-testid="stat-satisfaction">
+              <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-green-600 group-hover:text-green-700 transition-colors">98%</div>
+              <div className="text-sm md:text-base text-gray-600 mt-1 md:mt-2">Clientes Satisfeitos</div>
             </div>
-            <div className="glass-strong rounded-2xl p-fluid-sm hover-lift group" data-testid="stat-experience">
-              <div className="typography-display text-green-600 group-hover:text-green-700 transition-colors">5</div>
-              <div className="typography-body text-gray-600 mt-2">Anos de Experiência</div>
+            <div className="glass-strong rounded-xl md:rounded-2xl p-4 md:p-6 hover-lift group" data-testid="stat-experience">
+              <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-green-600 group-hover:text-green-700 transition-colors">5</div>
+              <div className="text-sm md:text-base text-gray-600 mt-1 md:mt-2">Anos de Experiência</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured Properties Section - Asymmetric Grid */}
-      <section className="p-fluid-lg bg-gradient-to-br from-white via-gray-50 to-slate-100">
-        <div className="container-fluid">
-          <div className="text-center mb-16 scroll-reveal">
-            <h2 className="typography-display text-gray-900 mb-6" data-testid="featured-title">
+      <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-white via-gray-50 to-slate-100">
+        <div className="container-fluid px-4">
+          <div className="text-center mb-10 md:mb-16 scroll-reveal">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6" data-testid="featured-title">
               Imóveis em Destaque
             </h2>
-            <p className="typography-body-large text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               Descubra nossa seleção cuidadosa dos melhores imóveis disponíveis em Angola
             </p>
           </div>
           
           {propertiesLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
               {[1, 2, 3].map((i) => (
                 <Card key={i} className="animate-pulse hover-lift">
-                  <div className="h-64 bg-gradient-to-br from-gray-200 to-gray-300 rounded-t-lg"></div>
-                  <CardContent className="p-6">
-                    <div className="h-4 bg-gray-200 rounded mb-4"></div>
-                    <div className="h-6 bg-gray-200 rounded mb-2"></div>
-                    <div className="h-4 bg-gray-200 rounded"></div>
+                  <div className="h-48 md:h-64 bg-gradient-to-br from-gray-200 to-gray-300 rounded-t-lg"></div>
+                  <CardContent className="p-4 md:p-6">
+                    <div className="h-3 md:h-4 bg-gray-200 rounded mb-3 md:mb-4"></div>
+                    <div className="h-4 md:h-6 bg-gray-200 rounded mb-2"></div>
+                    <div className="h-3 md:h-4 bg-gray-200 rounded"></div>
                   </CardContent>
                 </Card>
               ))}
