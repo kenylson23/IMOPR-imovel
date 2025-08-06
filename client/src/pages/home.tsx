@@ -15,18 +15,8 @@ import type { Property, Agent } from "@shared/schema";
 export default function HomePage() {
   useScrollReveal();
 
-  const { data: featuredProperties, isLoading: propertiesLoading, error } = useQuery<Property[]>({
+  const { data: featuredProperties, isLoading: propertiesLoading } = useQuery<Property[]>({
     queryKey: ["/api/properties/featured"],
-    staleTime: 0, // Force refresh to see if there's a cache issue
-    gcTime: 0, // Prevent caching
-  });
-
-  // Debug logs
-  console.log("Featured Properties Debug:", {
-    loading: propertiesLoading,
-    error: error,
-    data: featuredProperties,
-    dataLength: featuredProperties?.length
   });
 
   const { data: agents, isLoading: agentsLoading } = useQuery<Agent[]>({
