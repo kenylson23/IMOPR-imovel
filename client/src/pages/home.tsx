@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { Home, MapPin, Building, Users, Award, TrendingUp } from "lucide-react";
+import { Home, MapPin, Building, Users, Award, TrendingUp, Calculator, GitCompare, Sparkles } from "lucide-react";
+import { Link } from "wouter";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import PropertyCard from "@/components/property/property-card";
@@ -105,9 +106,11 @@ export default function HomePage() {
           )}
           
           <div className="text-center mt-12">
-            <Button size="lg" className="palanca-green palanca-green-hover text-white" data-testid="button-view-all-properties">
-              Ver Todos os Imóveis
-            </Button>
+            <Link href="/properties">
+              <Button size="lg" className="palanca-green palanca-green-hover text-white" data-testid="button-view-all-properties">
+                Ver Todos os Imóveis
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -177,6 +180,72 @@ export default function HomePage() {
                   </Button>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Unique Tools Section */}
+      <section className="py-20 bg-gradient-to-br from-purple-600 via-blue-600 to-green-600 text-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <div className="flex justify-center mb-6">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                <Sparkles className="w-8 h-8" />
+              </div>
+            </div>
+            <h2 className="text-4xl font-bold mb-4" data-testid="tools-title">
+              Ferramentas Exclusivas
+            </h2>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+              Experiências únicas que facilitam sua busca pelo imóvel perfeito
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 text-center hover:bg-white/20 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-green-500/30 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                <MapPin className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Mapa Interativo</h3>
+              <p className="text-white/80 mb-6">
+                Explore Angola province por province com estatísticas detalhadas do mercado imobiliário
+              </p>
+              <Link href="/tools">
+                <Button className="bg-white text-purple-600 hover:bg-gray-100 font-semibold">
+                  Explorar Mapa
+                </Button>
+              </Link>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 text-center hover:bg-white/20 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-blue-500/30 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                <Calculator className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Calculadora Visual</h3>
+              <p className="text-white/80 mb-6">
+                Calcule financiamentos com interface visual intuitiva e indicadores de acessibilidade
+              </p>
+              <Link href="/tools">
+                <Button className="bg-white text-blue-600 hover:bg-gray-100 font-semibold">
+                  Calcular Agora
+                </Button>
+              </Link>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 text-center hover:bg-white/20 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-purple-500/30 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                <GitCompare className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Comparador Premium</h3>
+              <p className="text-white/80 mb-6">
+                Compare propriedades lado a lado com scores automáticos e análise detalhada
+              </p>
+              <Link href="/tools">
+                <Button className="bg-white text-purple-600 hover:bg-gray-100 font-semibold">
+                  Comparar Agora
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

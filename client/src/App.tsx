@@ -8,6 +8,7 @@ import Home from "@/pages/home";
 import Properties from "@/pages/properties";
 import PropertyDetails from "@/pages/property-details";
 import Agents from "@/pages/agents";
+import Tools from "@/pages/tools";
 
 function Router() {
   return (
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/properties" component={Properties} />
       <Route path="/property/:id" component={PropertyDetails} />
       <Route path="/agents" component={Agents} />
+      <Route path="/tools" component={Tools} />
       <Route component={NotFound} />
     </Switch>
   );

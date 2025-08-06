@@ -12,6 +12,7 @@ export default function Header() {
     { href: "/", label: "Início" },
     { href: "/properties", label: "Imóveis" },
     { href: "/agents", label: "Agentes" },
+    { href: "/tools", label: "Ferramentas" },
     { href: "/about", label: "Sobre" },
     { href: "/contact", label: "Contacto" },
   ];
