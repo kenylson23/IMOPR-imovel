@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teste Dados Estáticos - Palanca Real</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Teste dos Dados Estáticos</h1>
+    <div id="properties"></div>
+    <div id="agents"></div>
+
+    <script type="module">
+        // Simula o ambiente de produção
+        const mockProperties = [
+            {
+                id: "prop-1",
+                title: "Apartamento de Luxo na Ilha de Luanda",
+                price: "85000000",
+                currency: "AOA",
+                type: "apartment",
+                city: "Luanda",
+                featured: true
+            },
+            {
+                id: "prop-2",
+                title: "Casa Moderna com Jardim",
+                price: "120000000",
+                currency: "AOA",
+                type: "house",
+                city: "Benguela",
+                featured: true
+            },
+            {
+                id: "prop-3",
+                title: "Edifício Comercial Prime",
+                price: "450000000",
+                currency: "AOA",
+                type: "commercial",
+                city: "Huambo",
+                featured: true
+            }
+        ];
+
+        const mockAgents = [
+            {
+                id: "agent-1",
+                name: "João Silva",
+                specialty: "Especialista em Luanda"
+            },
+            {
+                id: "agent-2", 
+                name: "Maria Santos",
+                specialty: "Especialista em Benguela"
+            }
+        ];
+
+        // Exibe propriedades
+        const propertiesDiv = document.getElementById('properties');
+        propertiesDiv.innerHTML = '<h2>Propriedades em Destaque:</h2>';
+        mockProperties.forEach(prop => {
+            propertiesDiv.innerHTML += `
+                <div style="border: 1px solid #ccc; margin: 10px; padding: 10px;">
+                    <h3>${prop.title}</h3>
+                    <p>Preço: ${parseInt(prop.price).toLocaleString()} AOA</p>
+                    <p>Tipo: ${prop.type}</p>
+                    <p>Cidade: ${prop.city}</p>
+                </div>
+            `;
+        });
+
+        // Exibe agentes  
+        const agentsDiv = document.getElementById('agents');
+        agentsDiv.innerHTML = '<h2>Agentes:</h2>';
+        mockAgents.forEach(agent => {
+            agentsDiv.innerHTML += `
+                <div style="border: 1px solid #ccc; margin: 10px; padding: 10px;">
+                    <h3>${agent.name}</h3>
+                    <p>${agent.specialty}</p>
+                </div>
+            `;
+        });
+
+        console.log('✅ Dados estáticos carregados com sucesso!');
+        console.log('Propriedades:', mockProperties);
+        console.log('Agentes:', mockAgents);
+    </script>
+</body>
+</html>

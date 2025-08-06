@@ -3,6 +3,9 @@
 # Build script específico para Netlify
 echo "🏗️ Building Palanca Real for Netlify..."
 
+# Definir variável de ambiente para modo estático
+export VITE_STATIC_MODE=true
+
 # Executar build do Vite
 npm run build
 

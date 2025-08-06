@@ -1,7 +1,21 @@
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
 import { getFeaturedProperties, getAllProperties, getPropertyById, getAllAgents, getAgentById } from "./mockData";
 
-const isStaticMode = import.meta.env.VITE_STATIC_MODE === 'true' || window.location.protocol === 'file:';
+// Detecta modo estático: produção no Netlify ou quando não há servidor local
+const isStaticMode = 
+  import.meta.env.VITE_STATIC_MODE === 'true' || 
+  window.location.protocol === 'file:' ||
+  (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') ||
+  import.meta.env.PROD;
+
+// Log para debug
+console.log('🔍 Modo de detecção:', {
+  VITE_STATIC_MODE: import.meta.env.VITE_STATIC_MODE,
+  protocol: window.location.protocol,
+  hostname: window.location.hostname,
+  PROD: import.meta.env.PROD,
+  isStaticMode
+});
 
 async function throwIfResNotOk(res: Response) {
   if (!res.ok) {
@@ -58,23 +72,30 @@ export const getQueryFn: <T>(options: {
   async ({ queryKey }) => {
     const path = queryKey.join("/") as string;
     
-    // Use mock data in static mode
+    // Verifica se está em modo estático ou se a API não está disponível
     if (isStaticMode) {
-      await new Promise(resolve => setTimeout(resolve, 100)); // Simulate network delay
+      console.log('🔧 Usando dados estáticos para:', path);
+      await new Promise(resolve => setTimeout(resolve, 100)); // Simula delay de rede
       return getMockData(path);
     }
     
-    // Use real API in development mode
-    const res = await fetch(path, {
-      credentials: "include",
-    });
+    // Tenta usar a API real primeiro, fallback para dados estáticos
+    try {
+      const res = await fetch(path, {
+        credentials: "include",
+      });
 
-    if (unauthorizedBehavior === "returnNull" && res.status === 401) {
-      return null;
+      if (unauthorizedBehavior === "returnNull" && res.status === 401) {
+        return null;
+      }
+
+      await throwIfResNotOk(res);
+      return await res.json();
+    } catch (error) {
+      console.log('⚠️ API não disponível, usando dados estáticos para:', path);
+      await new Promise(resolve => setTimeout(resolve, 100));
+      return getMockData(path);
     }
-
-    await throwIfResNotOk(res);
-    return await res.json();
   };
 
 export const queryClient = new QueryClient({

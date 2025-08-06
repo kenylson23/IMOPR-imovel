@@ -23,6 +23,13 @@ O erro 404 no Netlify foi corrigido! As seguintes correções foram implementada
 - ✅ CSS: 91.26 kB (gzipped: 15.42 kB)
 - ✅ JS: 512.33 kB (gzipped: 152.12 kB)
 
+## 🧪 Teste Local dos Dados Estáticos
+
+Para testar se os dados estáticos funcionam:
+1. Abra `dist/public/test-static.html` no navegador
+2. Verifique se as propriedades e agentes aparecem
+3. Confira o console para logs de debug
+
 ## 🎯 Passos para Deploy no Netlify
 
 ### Opção 1: Deploy via Git (Recomendado)
