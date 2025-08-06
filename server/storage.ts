@@ -115,7 +115,12 @@ export class MemStorage implements IStorage {
         province: "Luanda",
         address: "Rua da Ilha, Edificio Atlantico, Apartamento 15A",
         features: ["Vista para o mar", "Ar condicionado", "Garagem", "Segurança 24h", "Piscina"],
-        images: ["https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop"],
+        images: [
+          "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1515263487990-61b07816b522?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop"
+        ],
         agentId: "agent-1",
         featured: true,
         createdAt: new Date(),
@@ -137,7 +142,11 @@ export class MemStorage implements IStorage {
         province: "Benguela",
         address: "Rua do Centro, Casa 45",
         features: ["Jardim", "Garagem dupla", "Cozinha moderna", "Churrasqueira", "Sistema solar"],
-        images: ["https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop"],
+        images: [
+          "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=800&h=600&fit=crop"
+        ],
         agentId: "agent-2",
         featured: true,
         createdAt: new Date(),
@@ -159,7 +168,11 @@ export class MemStorage implements IStorage {
         province: "Huambo",
         address: "Avenida Principal, Edificio Comercial Prime",
         features: ["5 Andares", "20 Vagas de estacionamento", "Elevador", "Gerador", "Sistema de segurança"],
-        images: ["https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop"],
+        images: [
+          "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&h=600&fit=crop"
+        ],
         agentId: "agent-3",
         featured: true,
         createdAt: new Date(),
