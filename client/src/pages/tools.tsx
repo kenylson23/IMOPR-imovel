@@ -1,6 +1,6 @@
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
-import AngolaMap from "@/components/map/angola-map";
+import AngolaMapEnhanced from "@/components/map/angola-map-enhanced";
 import FinancingCalculator from "@/components/calculator/financing-calculator";
 import PropertyComparator from "@/components/compare/property-comparator";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -46,7 +46,7 @@ export default function ToolsPage() {
                 Clique nas províncias para ver estatísticas detalhadas do mercado imobiliário local.
               </p>
             </div>
-            <AngolaMap />
+            <AngolaMapEnhanced />
           </div>
 
           {/* Financing Calculator */}
