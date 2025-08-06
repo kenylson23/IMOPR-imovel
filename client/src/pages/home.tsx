@@ -15,8 +15,18 @@ import type { Property, Agent } from "@shared/schema";
 export default function HomePage() {
   useScrollReveal();
 
-  const { data: featuredProperties, isLoading: propertiesLoading } = useQuery<Property[]>({
+  const { data: featuredProperties, isLoading: propertiesLoading, error } = useQuery<Property[]>({
     queryKey: ["/api/properties/featured"],
+    staleTime: 0, // Force refresh to see if there's a cache issue
+    gcTime: 0, // Prevent caching
+  });
+
+  // Debug logs
+  console.log("Featured Properties Debug:", {
+    loading: propertiesLoading,
+    error: error,
+    data: featuredProperties,
+    dataLength: featuredProperties?.length
   });
 
   const { data: agents, isLoading: agentsLoading } = useQuery<Agent[]>({
@@ -109,9 +119,10 @@ export default function HomePage() {
             </p>
           </div>
           
-          {propertiesLoading ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
-              {[1, 2, 3].map((i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 scroll-reveal" data-testid="featured-properties">
+            {propertiesLoading ? (
+              // Loading skeletons
+              [1, 2, 3].map((i) => (
                 <Card key={i} className="animate-pulse hover-lift">
                   <div className="h-48 md:h-64 bg-gradient-to-br from-gray-200 to-gray-300 rounded-t-lg"></div>
                   <CardContent className="p-4 md:p-6">
@@ -120,21 +131,21 @@ export default function HomePage() {
                     <div className="h-3 md:h-4 bg-gray-200 rounded"></div>
                   </CardContent>
                 </Card>
-              ))}
-            </div>
-          ) : featuredProperties && featuredProperties.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 scroll-reveal" data-testid="featured-properties">
-              {featuredProperties.map((property, index) => (
-                <div key={property.id} className={`${index === 0 ? 'sm:col-span-2 lg:col-span-2 lg:row-span-2' : ''} card-mobile`}>
+              ))
+            ) : featuredProperties && featuredProperties.length > 0 ? (
+              // Actual properties
+              featuredProperties.map((property, index) => (
+                <div key={property.id} className={`${index === 0 ? 'sm:col-span-2 lg:col-span-1' : ''} card-mobile`}>
                   <PropertyCard property={property} />
                 </div>
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-12">
-              <p className="typography-body text-gray-500">Nenhum imóvel em destaque disponível no momento.</p>
-            </div>
-          )}
+              ))
+            ) : (
+              // No properties message
+              <div className="col-span-full text-center py-12">
+                <p className="typography-body text-gray-500">Nenhum imóvel em destaque disponível no momento.</p>
+              </div>
+            )}
+          </div>
           
           <div className="text-center mt-16 scroll-reveal">
             <Link href="/properties">
