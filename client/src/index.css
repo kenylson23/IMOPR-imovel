@@ -255,29 +255,27 @@
   /* Asymmetric Grid Layouts */
   .asymmetric-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
+    align-items: start;
   }
 
-  .asymmetric-grid .featured-large {
-    grid-column: span 2;
-    grid-row: span 2;
-  }
+  @media (min-width: 768px) {
+    .asymmetric-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .asymmetric-grid .featured-large {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
 
-  .asymmetric-grid .featured-wide {
-    grid-column: span 2;
-  }
+    .asymmetric-grid .featured-wide {
+      grid-column: span 2;
+    }
 
-  .asymmetric-grid .featured-tall {
-    grid-row: span 2;
-  }
-
-  @media (max-width: 768px) {
-    .asymmetric-grid .featured-large,
-    .asymmetric-grid .featured-wide,
     .asymmetric-grid .featured-tall {
-      grid-column: span 1;
-      grid-row: span 1;
+      grid-row: span 2;
     }
   }
 

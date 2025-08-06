@@ -23,6 +23,8 @@ export default function HomePage() {
     queryKey: ["/api/agents"],
   });
 
+
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -108,11 +110,11 @@ export default function HomePage() {
           </div>
           
           {propertiesLoading ? (
-            <div className="asymmetric-grid">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <Card key={i} className={`animate-pulse hover-lift ${i === 1 ? 'featured-large' : i === 2 ? 'featured-wide' : i === 4 ? 'featured-tall' : ''}`}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[1, 2, 3].map((i) => (
+                <Card key={i} className="animate-pulse hover-lift">
                   <div className="h-64 bg-gradient-to-br from-gray-200 to-gray-300 rounded-t-lg"></div>
-                  <CardContent className="p-fluid-sm">
+                  <CardContent className="p-6">
                     <div className="h-4 bg-gray-200 rounded mb-4"></div>
                     <div className="h-6 bg-gray-200 rounded mb-2"></div>
                     <div className="h-4 bg-gray-200 rounded"></div>
@@ -120,13 +122,17 @@ export default function HomePage() {
                 </Card>
               ))}
             </div>
-          ) : (
+          ) : featuredProperties && featuredProperties.length > 0 ? (
             <div className="asymmetric-grid scroll-reveal" data-testid="featured-properties">
-              {featuredProperties?.map((property, index) => (
+              {featuredProperties.map((property, index) => (
                 <div key={property.id} className={`${index === 0 ? 'featured-large' : index === 1 ? 'featured-wide' : index === 3 ? 'featured-tall' : ''}`}>
                   <PropertyCard property={property} />
                 </div>
               ))}
+            </div>
+          ) : (
+            <div className="text-center py-12">
+              <p className="typography-body text-gray-500">Nenhum imóvel em destaque disponível no momento.</p>
             </div>
           )}
           
