@@ -80,16 +80,16 @@ client/src/
 ## Deploy Configuration
 
 ### Netlify Static Deploy (Janeiro 2025)
-- **Configuração completa para deploy estático**: netlify.toml, _redirects, e sistema de dados mock
-- **Build otimizado**: Assets minificados, CSS 91KB (gzipped 15KB), JS 512KB (gzipped 152KB)
+- **Configuração completa para deploy estático**: netlify.toml, _redirects, e sistema de dados estáticos
+- **Build otimizado**: Assets minificados, CSS 91KB (gzipped 15KB), JS 512KB (gzipped 152KB) 
 - **Modo híbrido**: Desenvolvimento com servidor Express, produção totalmente estática
-- **Mock Data System**: Dados integrados no frontend para funcionamento sem backend
+- **Static Data System**: Dados estáticos baseados nos dados reais do servidor para funcionamento sem backend
 - **SPA Configuration**: Redirects configurados para Single Page Application
 - **Security Headers**: Headers de segurança e cache otimizado configurados
 
 ### Funcionalidades para Deploy
 - Sistema de detecção automática entre modo desenvolvimento e estático
-- Dados mock idênticos aos do servidor para continuidade perfeita
+- Dados estáticos sincronizados com os dados reais do servidor para continuidade perfeita
 - Performance otimizada com lazy loading e assets comprimidos
 - PWA ready com manifesto e service worker
 - SEO otimizado com meta tags dinâmicas

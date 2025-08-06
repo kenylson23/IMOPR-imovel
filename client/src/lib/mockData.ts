@@ -25,8 +25,8 @@ export const mockProperties: Property[] = [
     ],
     agentId: "agent-1",
     featured: true,
-    createdAt: new Date("2025-01-06"),
-    updatedAt: new Date("2025-01-06"),
+    createdAt: new Date("2025-08-06T17:43:19.846Z"),
+    updatedAt: new Date("2025-08-06T17:43:19.846Z"),
   },
   {
     id: "prop-2",
@@ -51,8 +51,8 @@ export const mockProperties: Property[] = [
     ],
     agentId: "agent-2",
     featured: true,
-    createdAt: new Date("2025-01-06"),
-    updatedAt: new Date("2025-01-06"),
+    createdAt: new Date("2025-08-06T17:43:19.846Z"),
+    updatedAt: new Date("2025-08-06T17:43:19.846Z"),
   },
   {
     id: "prop-3",
@@ -77,8 +77,8 @@ export const mockProperties: Property[] = [
     ],
     agentId: "agent-3",
     featured: true,
-    createdAt: new Date("2025-01-06"),
-    updatedAt: new Date("2025-01-06"),
+    createdAt: new Date("2025-08-06T17:43:19.846Z"),
+    updatedAt: new Date("2025-08-06T17:43:19.846Z"),
   },
   {
     id: "prop-4",
@@ -99,8 +99,8 @@ export const mockProperties: Property[] = [
     images: ["https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop"],
     agentId: "agent-1",
     featured: false,
-    createdAt: new Date("2025-01-06"),
-    updatedAt: new Date("2025-01-06"),
+    createdAt: new Date("2025-08-06T17:43:19.846Z"),
+    updatedAt: new Date("2025-08-06T17:43:19.846Z"),
   },
   {
     id: "prop-5",
@@ -121,8 +121,8 @@ export const mockProperties: Property[] = [
     images: ["https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop"],
     agentId: "agent-2",
     featured: false,
-    createdAt: new Date("2025-01-06"),
-    updatedAt: new Date("2025-01-06"),
+    createdAt: new Date("2025-08-06T17:43:19.846Z"),
+    updatedAt: new Date("2025-08-06T17:43:19.846Z"),
   },
   {
     id: "prop-6",
@@ -143,8 +143,8 @@ export const mockProperties: Property[] = [
     images: ["https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop"],
     agentId: "agent-4",
     featured: false,
-    createdAt: new Date("2025-01-06"),
-    updatedAt: new Date("2025-01-06"),
+    createdAt: new Date("2025-08-06T17:43:19.846Z"),
+    updatedAt: new Date("2025-08-06T17:43:19.846Z"),
   },
 ];
 
@@ -160,7 +160,7 @@ export const mockAgents: Agent[] = [
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face",
     bio: "Especialista em imóveis residenciais e comerciais na região de Luanda.",
     social: [],
-    createdAt: new Date("2025-01-06"),
+    createdAt: new Date("2025-08-06T17:43:19.846Z"),
   },
   {
     id: "agent-2",
@@ -173,7 +173,7 @@ export const mockAgents: Agent[] = [
     image: "https://images.unsplash.com/photo-1494790108755-2616b612b647?w=200&h=200&fit=crop&crop=face",
     bio: "Foco em propriedades residenciais de alto padrão em Benguela.",
     social: [],
-    createdAt: new Date("2025-01-06"),
+    createdAt: new Date("2025-08-06T17:43:19.846Z"),
   },
   {
     id: "agent-3",
@@ -186,7 +186,7 @@ export const mockAgents: Agent[] = [
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face",
     bio: "Especializado em imóveis comerciais e investimentos.",
     social: [],
-    createdAt: new Date("2025-01-06"),
+    createdAt: new Date("2025-08-06T17:43:19.846Z"),
   },
   {
     id: "agent-4",
@@ -199,7 +199,7 @@ export const mockAgents: Agent[] = [
     image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&crop=face",
     bio: "Conhecimento profundo do mercado imobiliário em Huambo.",
     social: [],
-    createdAt: new Date("2025-01-06"),
+    createdAt: new Date("2025-08-06T17:43:19.846Z"),
   },
 ];
 

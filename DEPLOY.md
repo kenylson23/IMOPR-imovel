@@ -14,13 +14,14 @@ O erro 404 no Netlify foi corrigido! As seguintes correções foram implementada
 - ✅ `netlify.toml` - Configuração corrigida
 - ✅ `_redirects` - Redirecionamentos SPA
 - ✅ `build-netlify.sh` - Script de build personalizado
-- ✅ Sistema de dados mock integrado
+- ✅ Dados estáticos baseados nos dados reais do servidor
 
-### Build Verificado:
+### Build Atualizado:
+- ✅ Dados estáticos sincronizados com dados reais do servidor
 - ✅ Build executado e testado com sucesso
 - ✅ Arquivos na pasta correta: `dist/public/`
 - ✅ CSS: 91.26 kB (gzipped: 15.42 kB)
-- ✅ JS: 512.10 kB (gzipped: 152.10 kB)
+- ✅ JS: 512.33 kB (gzipped: 152.12 kB)
 
 ## 🎯 Passos para Deploy no Netlify
 
