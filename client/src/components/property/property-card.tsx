@@ -53,7 +53,7 @@ export default function PropertyCard({ property }: PropertyCardProps) {
   };
 
   return (
-    <Card className={`group card-shimmer ${property.featured ? 'premium-hover gradient-border' : 'hover:shadow-2xl hover:shadow-green-500/20'} transition-all duration-500 transform hover:-translate-y-3 hover:scale-[1.02] overflow-hidden border-0 bg-gradient-to-br from-white to-gray-50 reveal-up`} data-testid={`property-card-${property.id}`}>
+    <Card className={`group ${property.featured ? 'glass-strong premium-hover gradient-border' : 'glass hover-lift'} transition-all duration-500 overflow-hidden border-0 rounded-3xl`} data-testid={`property-card-${property.id}`}>
       <div className="relative overflow-hidden">
         <div className="relative h-64 overflow-hidden">
           <img

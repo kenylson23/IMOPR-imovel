@@ -23,15 +23,15 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+    <header className="glass-strong backdrop-blur-md bg-white/80 shadow-lg sticky top-0 z-50 border-b border-white/20">
+      <div className="container-fluid">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2" data-testid="logo">
-            <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+          <Link href="/" className="flex items-center space-x-3 hover-lift" data-testid="logo">
+            <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center shadow-lg">
               <Home className="text-white text-xl" />
             </div>
-            <span className="text-2xl font-bold text-gray-900">Palanca Real</span>
+            <span className="typography-subheading text-gray-900 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Palanca Real</span>
           </Link>
           
           {/* Desktop Navigation */}
@@ -54,7 +54,7 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button className="bg-green-500 text-white hover:bg-green-600" data-testid="button-list-property">
+            <Button className="palanca-green palanca-green-hover text-white hover-lift px-6 py-3 rounded-xl" data-testid="button-list-property">
               Anunciar Imóvel
             </Button>
           </div>
